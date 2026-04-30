@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const CourseDetailsPage = async ({ params }) => {
@@ -15,7 +16,12 @@ const CourseDetailsPage = async ({ params }) => {
                 <p className='text-lg text-gray-700 mb-4'>{course.description}</p>
                 <p className='text-sm text-gray-500'>Rating: {course.rating}</p>
                 <p className='text-sm text-gray-500'>Level: {course.level}</p>
-                
+                <img
+                            src={course.image}
+                            alt={course.title}
+                            width={400}
+                            height={160}
+                        /> 
              
         </div>
     );

@@ -7,7 +7,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch using HTML, CSS, JavaScript, and modern frameworks.",
-    "image": "https://ibb.co.com/4ndtNhh8",
+    "image": "https://i.ibb.co.com/mV8Tzff9/close-up-image-programer-working-his-desk-office.jpg",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.7,
     "level": "Beginner",
     "description": "Master UI/UX design principles, wireframe, prototyping, and user research techniques.",
-    "image": "https://ibb.co.com/S7RQ9xM4",
+    "image": "https://i.ibb.co.com/HpnNk2bf/uiux-text-2.jpg",
     "category": "Design"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.6,
     "level": "Intermediate",
     "description": "Learn SEO, social media marketing, email campaigns, and growth strategies.",
-    "image": "https://ibb.co.com/hFtNyq7chttps",
+    "image": "https://i.ibb.co.com/Mk3HsX2f/digital-marketing.jpg",
     "category": "Marketing"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Analyze data using Python, Pandas, NumPy, and visualization libraries.",
-    "image": "https://ibb.co.com/0Hk1q7j",
+    "image": "https://i.ibb.co.com/LVMBSFz/data-analytics-dashboard.jpg",
     "category": "Data Science"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.8,
     "level": "Advanced",
     "description": "Understand machine learning concepts, models, and real-world applications.",
-    "image": "https://ibb.co.com/PZJv8vh1",
+    "image": "https://i.ibb.co.com/tMnT5TsY/Machine-Learning.jpg",
     "category": "AI"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.5,
     "level": "Beginner",
     "description": "Learn how to start freelancing, find clients, and grow your online career.",
-    "image": "https://ibb.co.com/Xk2T2PVK",
+    "image": "https://i.ibb.co.com/2YnBnr5C/freelancing.jpg",
     "category": "Freelancing"
   }
 ]

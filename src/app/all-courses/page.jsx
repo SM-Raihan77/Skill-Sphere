@@ -1,4 +1,5 @@
 import CourseCard from '@/components/CourseCard';
+import Image from 'next/image';
 import React from 'react';
 
 const CoursesPage =async () => {
@@ -12,6 +13,7 @@ const CoursesPage =async () => {
                 {courses.map(course => (
                     <div key={course.id} className='border rounded-lg p-4 mb-4 shadow-md'>
                        <CourseCard course={course} />
+                      
                     </div>
                 ))}
             </div>

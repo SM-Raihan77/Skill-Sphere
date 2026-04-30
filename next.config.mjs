@@ -8,12 +8,9 @@ const nextConfig = {
         hostname: 's.udemycdn.com'
       },
       {
-        hostname: 'i.postimg.cc'
+        hostname: 'ibb.co.com'
       },
-      {
-        hostname: 'www.magnific.com'
-      }
-    ]
+    ] 
   }
 };
 

@@ -1,4 +1,3 @@
-
 'use client';
 import { ThemeProvider } from 'next-themes';
 
@@ -14,5 +13,4 @@ const ThemesProvider = ({ children }) => {
         </div>
     );
 };
-
 export default ThemesProvider;

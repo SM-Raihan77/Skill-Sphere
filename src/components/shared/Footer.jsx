@@ -51,9 +51,9 @@ const Footer = () => {
           <div className="flex gap-4">
             <a
               href="#"
-              className="p-2 rounded-full text-purple-500 hover:bg-primary/10 transition"
+              className="p-2 rounded-full hover:bg-primary/10 transition"
             >
-              <FaFacebook bg-red size={18} />
+              <FaFacebook size={18} />
             </a>
 
             <a

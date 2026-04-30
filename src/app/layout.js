@@ -2,6 +2,8 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import ThemesProvider from "./provider/ThemesProvider";
+
 
 const OutfitFont = Outfit({
   subsets: ["latin"],
@@ -16,18 +18,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html
-     
-      lang="en"
-       data-theme="light"
-      className={`${OutfitFont.className}  h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+ return (
+  <html lang="en" suppressHydrationWarning> 
+    <body className={OutfitFont.className}>
+      <ThemesProvider>
         <Navbar />
-        {children}
-        <Footer/>
-      </body>
-    </html>
-  );
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </ThemesProvider>
+    </body>
+  </html>
+);
 }

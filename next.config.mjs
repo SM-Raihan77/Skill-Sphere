@@ -6,6 +6,9 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: 's.udemycdn.com'
+      },
+      {
+        hostname: 'i.postimg.cc'
       }
     ]
   }

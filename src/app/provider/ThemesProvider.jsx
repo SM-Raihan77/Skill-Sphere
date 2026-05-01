@@ -1,16 +1,12 @@
 'use client';
 import { ThemeProvider } from 'next-themes';
-
-import React, { use } from 'react';
+import React from 'react';
 
 const ThemesProvider = ({ children }) => {
     return (
-        <div>
-            <ThemeProvider attribute="class" defaultTheme="light">
-                {children}
-            </ThemeProvider>
-
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="light">
+            {children}
+        </ThemeProvider>
     );
 };
 export default ThemesProvider;

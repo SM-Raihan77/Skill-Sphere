@@ -34,10 +34,12 @@ export default function SignInPage() {
         };
 
      const handelGoogleSignIn = async () => {
-    await authClient.signIn.social({
-        provider: 'google'
+     await authClient.signIn.social({
+     provider: 'google'
+
     })
   }
+  
 
         return (
             <Card className="border mx-auto w-125 py-10 mt-5">

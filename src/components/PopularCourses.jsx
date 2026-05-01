@@ -7,7 +7,7 @@ const PopularCourses = async() => {
     const popularCourses = [...courses]
   .sort((a, b) => b.rating - a.rating)
   .slice(0, 3);
-    console.log(popularCourses, "popular courses");
+    // console.log(popularCourses, "popular courses");
     return (
         <div>
             <h2 className='text-2xl font-bold mb-4  text-center'>Popular Courses</h2>

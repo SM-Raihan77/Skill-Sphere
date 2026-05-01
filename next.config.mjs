@@ -8,7 +8,7 @@ const nextConfig = {
         hostname: 's.udemycdn.com'
       },
       {
-        hostname: 'ibb.co.com'
+        hostname: 'i.ibb.co.com'
       },
     ] 
   }

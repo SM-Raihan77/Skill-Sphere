@@ -21,6 +21,7 @@ const CourseCard = ({ course }) => {
                     {course.description}
                 </p>
                 
+                <div className='flex justify-between'>
                 <div className="flex items-center mb-4">
                     <p className='text-sm font-bold text-blue-600'>
                          {course.rating.toFixed(1)}
@@ -28,6 +29,8 @@ const CourseCard = ({ course }) => {
                    <p>
                     <FaStar className='text-yellow-400' />
                    </p>
+                </div>
+                <p> {course.instructor}</p>
                 </div>
 
                 <Link href={`/all-courses/${course.id}`} className="w-full">

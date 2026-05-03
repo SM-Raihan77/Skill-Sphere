@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import ThemesProvider from "./provider/ThemesProvider";
+import "react-toastify/dist/ReactToastify.css";
+import ToastProvider from "./provider/ToastProvider";
 
 
 const OutfitFont = Outfit({
@@ -23,10 +25,11 @@ export default function RootLayout({ children }) {
     <body className={OutfitFont.className}>
       <ThemesProvider>
         <Navbar />
-        <main className="min-h-screen">
+        <main className="min-h-screen container mx-auto">
           {children}
         </main>
         <Footer />
+      <ToastProvider />
       </ThemesProvider>
     </body>
   </html>

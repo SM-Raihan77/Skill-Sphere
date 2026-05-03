@@ -1,23 +1,99 @@
+// "use client";
+// import { authClient } from "@/lib/auth-client";
+// import { Check } from "@gravity-ui/icons";
+// import {
+//     Button,
+//     Card,
+//     Description,
+//     FieldError,
+//     Form,
+//     Input,
+//     Label,
+//     TextField,
+// } from "@heroui/react";
+// import { useRouter } from "next/navigation";
+// import { GrGoogle } from "react-icons/gr";
+
+
+
+// export default function SignUpPage() {
+
+//     const router = useRouter();
+//     const onSubmit = async (e) => {
+//         e.preventDefault();
+
+//         const name = e.target.name.value;
+//         const image = e.target.image.value;
+//         const email = e.target.email.value;
+//         const password = e.target.password.value;
+
+//         // console.log({name,image,email,password})
+
+//         const { data, error } = await authClient.signUp.email({
+//             name,
+//             email,
+//             password,
+//             image,
+
+//         });
+//         console.log({ data, error })
+//         if (error) {
+//             toast.error("Registration failed!");
+//             return;
+//         }
+
+//         if (data) {
+//             toast.success("Registration successful! Please Log In");
+//         }
+
+
+//         if (!error) {
+//             router.push('/signin')
+//         }
+
+//     };
+//         const handelGoogleSignIn = async () => {
+//             try {
+//                 await authClient.signIn.social({
+//                     provider: "google",
+//                 });
+
+//                 toast.success(" Sign in with Google...");
+//             } catch (error) {
+//                 toast.error("Google sign-in failed!");
+//             }
+
+//         }
+
+
+
+//     };
+
+
+
+
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
     Button,
     Card,
-    Description,
-    FieldError,
     Form,
     Input,
     Label,
     TextField,
+    FieldError,
+    Description
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
-
+import { GrGoogle } from "react-icons/gr";
+import { toast } from "react-toastify";
 
 
 export default function SignUpPage() {
-
     const router = useRouter();
+
+    // ১. ইমেইল সাইন আপ ফাংশন
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -26,25 +102,34 @@ export default function SignUpPage() {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        // console.log({name,image,email,password})
-
         const { data, error } = await authClient.signUp.email({
             name,
             email,
             password,
             image,
-    
-        })
-        console.log({data ,error})
+        });
 
-       
-
-       
-
-        if (!error) {
-            router.push('/')
+        if (error) {
+            toast.error(error.message || "Registration failed!");
+            return;
         }
 
+        if (data) {
+            toast.success("Registration successful! Please Log In");
+            router.push('/signin');
+        }
+    }; // <--- onSubmit এখানে শেষ
+
+    // ২. গুগল সাইন ইন ফাংশন (আলাদা ভাবে লিখতে হবে)
+    const handleGoogleSignIn = async () => {
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+            });
+            toast.success("Redirecting to Google...");
+        } catch (error) {
+            toast.error("Google sign-in failed!");
+        }
     };
 
     return (
@@ -117,6 +202,10 @@ export default function SignUpPage() {
                         Reset
                     </Button>
                 </div>
+                <p className="text-center">Or</p>
+
+                <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle /> Sign Up With Google</Button>
+
             </Form>
         </Card>
     );

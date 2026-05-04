@@ -2,6 +2,7 @@
 import { StarFill } from "@gravity-ui/icons";
 import Image from "next/image";
 import React from "react";
+import { FaStar } from "react-icons/fa";
 import { FaSterlingSign } from "react-icons/fa6";
 
 const CourseDetailsPage = async ({ params }) => {
@@ -38,7 +39,7 @@ const CourseDetailsPage = async ({ params }) => {
             {course.description}
           </p>
 
-          <div className="flex gap-4 text-sm text-gray-600">
+          <div className="flex justify-center gap-4 text-sm text-gray-600">
             <div className="flex items-center mb-4">
               <p className='text-sm font-bold text-blue-600'>
                 {course.rating.toFixed(1)}
@@ -47,7 +48,8 @@ const CourseDetailsPage = async ({ params }) => {
                 <FaStar className='text-yellow-400' />
               </p>
             </div>
-            <p>📊 Level: {course.level}</p>
+            <p> Level: {course.level}</p>
+            <p>Instructor: {course.instructor}</p>
           </div>
         </div>
 

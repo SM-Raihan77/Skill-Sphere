@@ -9,7 +9,7 @@ import { HiTrendingUp } from 'react-icons/hi';
 
 const PopularCourses = async () => {
 
-    const res = await fetch("https://skill-sphere-36md.vercel.app/data.json",);
+    const res = await fetch("https://skill-sphere-36md.vercel.app/data.json");
 
     const courses = await res.json();
 

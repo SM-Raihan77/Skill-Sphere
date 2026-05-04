@@ -1,15 +1,16 @@
 
+import { StarFill } from "@gravity-ui/icons";
 import Image from "next/image";
 import React from "react";
 import { FaSterlingSign } from "react-icons/fa6";
 
 const CourseDetailsPage = async ({ params }) => {
-  
+
   const { id } = await params;
-    const res = await fetch("https://skill-sphere-36md.vercel.app/data.json",);
-     const courses = await res.json();
-     const course = courses.find(c => c.id == id);
-     // console.log(course, "course detail
+  const res = await fetch("https://skill-sphere-36md.vercel.app/data.json",);
+  const courses = await res.json();
+  const course = courses.find(c => c.id == id);
+  // console.log(course, "course detail
 
   if (!course) {
     return <p className="text-red-500">Course not found</p>;
@@ -19,7 +20,7 @@ const CourseDetailsPage = async ({ params }) => {
     <div className="max-w-6xl mx-auto p-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        {/* LEFT SIDE - Course Details */}
+
         <div className="md:col-span-2 bg-white shadow-md rounded-xl p-6">
           <h1 className="text-3xl text-center font-bold mb-4">Course Details</h1>
 
@@ -38,12 +39,19 @@ const CourseDetailsPage = async ({ params }) => {
           </p>
 
           <div className="flex gap-4 text-sm text-gray-600">
-            <p><FaSterlingSign />Rating: {course.rating}</p>
+            <div className="flex items-center mb-4">
+              <p className='text-sm font-bold text-blue-600'>
+                {course.rating.toFixed(1)}
+              </p>
+              <p>
+                <FaStar className='text-yellow-400' />
+              </p>
+            </div>
             <p>📊 Level: {course.level}</p>
           </div>
         </div>
 
-        {/* RIGHT SIDE - Static Curriculum */}
+
         <div className="bg-gray-50 shadow-md rounded-xl p-6 text-center">
           <h2 className="text-xl font-bold mb-4 text-center">
             Full Course Curriculum

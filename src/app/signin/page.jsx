@@ -60,10 +60,10 @@ export default function SignInPage() {
 
 
     return (
-        <Card className="border mx-auto w-125 py-10 mt-5">
-            <h1 className="text-center text-2xl font-bold">Sign In</h1>
+        <Card className="border mx-auto w-full max-w-[500px] py-10 mt-10 shadow-lg">
+            <h1 className="text-center text-2xl font-bold mb-6">Sign In</h1>
 
-            <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+            <Form className="flex w-full max-w-[380px] mx-auto flex-col gap-6 px-4" onSubmit={onSubmit}>
 
                 <TextField
                     isRequired
@@ -123,11 +123,11 @@ export default function SignInPage() {
                 <Button onClick={handelGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
 
 
-             
+
                 <a href="/signup"> <Button variant="outline" className={'w-full'}
                 > Don't have an account </Button></a>
-               
-                
+
+
             </Form>
         </Card>
     );

@@ -1,75 +1,3 @@
-// "use client";
-// import { authClient } from "@/lib/auth-client";
-// import { Check } from "@gravity-ui/icons";
-// import {
-//     Button,
-//     Card,
-//     Description,
-//     FieldError,
-//     Form,
-//     Input,
-//     Label,
-//     TextField,
-// } from "@heroui/react";
-// import { useRouter } from "next/navigation";
-// import { GrGoogle } from "react-icons/gr";
-
-
-
-// export default function SignUpPage() {
-
-//     const router = useRouter();
-//     const onSubmit = async (e) => {
-//         e.preventDefault();
-
-//         const name = e.target.name.value;
-//         const image = e.target.image.value;
-//         const email = e.target.email.value;
-//         const password = e.target.password.value;
-
-//         // console.log({name,image,email,password})
-
-//         const { data, error } = await authClient.signUp.email({
-//             name,
-//             email,
-//             password,
-//             image,
-
-//         });
-//         console.log({ data, error })
-//         if (error) {
-//             toast.error("Registration failed!");
-//             return;
-//         }
-
-//         if (data) {
-//             toast.success("Registration successful! Please Log In");
-//         }
-
-
-//         if (!error) {
-//             router.push('/signin')
-//         }
-
-//     };
-//         const handelGoogleSignIn = async () => {
-//             try {
-//                 await authClient.signIn.social({
-//                     provider: "google",
-//                 });
-
-//                 toast.success(" Sign in with Google...");
-//             } catch (error) {
-//                 toast.error("Google sign-in failed!");
-//             }
-
-//         }
-
-
-
-//     };
-
-
 
 
 "use client";
@@ -93,7 +21,7 @@ import { toast } from "react-toastify";
 export default function SignUpPage() {
     const router = useRouter();
 
-    // ১. ইমেইল সাইন আপ ফাংশন
+    
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -118,9 +46,7 @@ export default function SignUpPage() {
             toast.success("Registration successful! Please Log In");
             router.push('/signin');
         }
-    }; // <--- onSubmit এখানে শেষ
-
-    // ২. গুগল সাইন ইন ফাংশন (আলাদা ভাবে লিখতে হবে)
+    }
     const handleGoogleSignIn = async () => {
         try {
             await authClient.signIn.social({
@@ -133,10 +59,10 @@ export default function SignUpPage() {
     };
 
     return (
-        <Card className="border mx-auto w-125 py-10 mt-5">
-            <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+        <Card className="border mx-auto w-full max-w-[500px] py-10 mt-10 shadow-lg">
+            <h1 className="text-center text-2xl font-bold mb-6">Sign Up</h1>
 
-            <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+            <Form className="flex w-full max-w-[380px] mx-auto flex-col gap-6 px-4" onSubmit={onSubmit}>
                 <TextField isRequired name="name" type="text">
                     <Label>Name</Label>
                     <Input placeholder="Enter your name" />
